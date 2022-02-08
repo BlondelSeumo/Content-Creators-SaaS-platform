@@ -1,0 +1,21 @@
+.add-user-lists-wrapper{
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.list-item .user-avatar{
+    width:40px;height:40px;margin-left:-18px
+}
+
+.list-item .separator{
+    right: 1rem;
+}
+
+.no-notifications{
+    max-width: 200px
+}
+
+input[type=checkbox]
+{
+    width: 25px; height: 25px;
+}

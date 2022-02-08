@@ -1,0 +1,37 @@
+
+// Extra Opacity values Map
+$opacities: (
+    "0": $opacity-0,
+    "1": $opacity-1,
+    "2": $opacity-2,
+    "3": $opacity-3,
+    "4": $opacity-4,
+    "5": $opacity-5,
+    "6": $opacity-6,
+    "7": $opacity-7,
+    "8": $opacity-8,
+    "9": $opacity-9,
+    "10": $opacity-10
+) !default;
+
+// Extend Opacity values - CT
+@each $name, $value in $opacities {
+    .opacity-#{$name} {
+        opacity: $value !important;
+    }
+}
+
+// Z-index
+$z-index: (
+    "0": 0,
+    "1": 1,
+    "2": 2,
+    "3": 3
+) !default;
+
+// z-index
+@each $name, $value in $z-index {
+    .z-index-#{$name} {
+        z-index: $value !important;
+    }
+}

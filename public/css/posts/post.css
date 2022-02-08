@@ -1,0 +1,52 @@
+.dropzone-previews.dropzone{
+    min-height: 0px!important;
+    border: none!important;
+}
+
+.dropzone .dz-preview.dz-image-preview {
+    background: transparent!important;
+}
+
+.dropzone .dz-preview:hover .dz-image img {
+     -webkit-filter: blur(2px)!important;
+    filter: blur(2px)!important;
+}
+
+.dropzone .dz-preview .dz-filename{
+    display: none!important;
+}
+
+.dropzone .dz-preview {
+    min-height: unset;
+}
+
+/*Vanilla emojis*/
+.emoji-picker__content {
+    overflow: hidden;
+}
+
+.emoji-picker__wrapper{
+    margin-bottom: 10px!important;
+}
+
+/* Post comments */
+.post-comments-wrapper .rounded-circle, .new-post-comment-area .rounded-circle{
+    height:50px;
+    width:50px
+}
+
+.post-comment .separator{
+    right: 1rem;
+}
+
+.new-post-comment-area .input-group-append{
+    margin-left:-60px;
+}
+
+.comment-textarea{
+    height:45px!important;
+    min-height:45px!important;
+    border-radius: 20px!important;
+    padding-top: 10px!important;
+    overflow: hidden!important;
+}

@@ -1,0 +1,47 @@
+.table-wrapper{}
+
+.profileAvatar-settings {
+    width: 4rem;
+    height: 4rem;
+}
+
+.nav{
+    flex-wrap:nowrap;
+}
+
+.setting-menu-mobile .mCSB_container{
+    display: flex;
+}
+
+.verify-form .dropzone{
+    min-height: auto;!important;
+}
+
+.verify-form  .dropzone .dz-preview.dz-image-preview {
+    background: transparent!important;
+}
+
+.verify-form  .dropzone .dz-preview:hover .dz-image img {
+    -webkit-filter: blur(2px)!important;
+    filter: blur(2px)!important;
+}
+
+.verify-form  .dropzone .dz-preview .dz-filename{
+    display: none!important;
+}
+
+.verify-form  .dropzone .dz-preview {
+    min-height: unset;
+}
+
+.profile-cover-bg .h-pill, .avatar-holder .h-pill
+{
+    width: 30px;
+    height: 30px;
+}
+
+@media (max-width: 767px) {
+    .settings-content {
+        border:none!important;
+    }
+}

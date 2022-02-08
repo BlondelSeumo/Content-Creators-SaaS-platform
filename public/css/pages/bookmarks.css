@@ -1,0 +1,16 @@
+.notifications-nav{
+    flex-wrap:nowrap;
+}
+
+.bookmarks-menu-mobile .mCSB_container{
+    display: flex;
+}
+.bookmarks-menu-mobile .mCustomScrollBox {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .settings-content {
+        border:none!important;
+    }
+}

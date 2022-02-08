@@ -1,0 +1,10 @@
+
+body::selection {
+  color: $selection-color;
+  background: $selection-bg;
+}
+
+.h-pill-primary:hover{
+    background-color: lighten($gray-800-alt,10%)!important;
+    color:lighten($primary-alt,15%)!important;
+}

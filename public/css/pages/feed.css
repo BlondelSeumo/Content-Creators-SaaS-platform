@@ -1,0 +1,9 @@
+.main-wrapper .col-10{
+    padding-right:0px!important;
+}
+
+@media (max-width: 767px) {
+    .suggestions-wrapper {
+        border:none!important;
+    }
+}

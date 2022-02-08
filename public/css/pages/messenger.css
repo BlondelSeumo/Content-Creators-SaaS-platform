@@ -1,0 +1,197 @@
+.conversations-wrapper{
+    height:100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.conversation-wrapper{
+    height:75vh;
+}
+
+.conversation-header{}
+
+.conversation-header .details-holder{
+    padding: 30px 15px 15px;
+}
+
+.conversation-header .details-holder img{
+    width:40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.conversation-content{
+    overflow-x: hidden;
+}
+
+.contact-avatar{
+    width:56px;
+    height: 56px;
+}
+
+.contact-box{
+    transition: 0.3s;
+    cursor:pointer;
+}
+
+.contact-name{
+    max-width: 140px;
+}
+
+.contact-message{
+    display:inline-block;max-width: 80px
+}
+
+.message-box{
+    text-align: right;
+}
+
+.message-bubble{
+    text-align: left;
+    font-size:15px;
+    border-radius: 18px;
+    border-top-left-radius: 0px;
+    padding: 8px 10px 8px 10px;
+}
+
+.sender .message-bubble{
+    border-top-left-radius: 18px;
+    border-top-right-radius: 0px;
+}
+
+.message-bubble a:hover{
+    color:#c7c7c7!important;
+}
+
+.sender .message-bubble a{
+    text-decoration:none!important;
+}
+
+.sender .message-bubble a:hover{}
+
+.conversation-writeup textarea{}
+
+.messageBoxInput{
+    min-height: 45px!important;
+    max-height: 120px!important;
+    overflow-y: auto;
+    word-wrap:break-word;
+    border-radius: 20px;
+}
+
+.messenger-buttons-wrapper{}
+
+.searchAvatar{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+@media (max-width: 767px) {
+    .contacts-wrapper{
+        display: flex;
+        flex-direction: row;
+    }
+    .contact-box{
+        display: flex;
+        justify-content: center;
+    }
+    .conversations-wrapper{
+        height: initial!important;
+        min-height: initial!important;
+        border-bottom: 0!important;
+    }
+    .container.messenger{
+        height: initial!important;
+        min-height: initial!important;
+    }
+}
+
+
+/* custom scrollbar */
+.conversations-wrapper::-webkit-scrollbar {
+    width: 20px;
+}
+
+.conversations-wrapper::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.conversations-wrapper::-webkit-scrollbar-thumb {
+    background-color: #C1C1C1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+.conversations-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #A8A8A8;
+}
+
+.dropzone{
+    padding: .5rem .75rem!important;
+    border: 1px solid #ced4da!important;
+}
+
+.dz-default{
+    display: none!important;
+}
+
+.dropzone-previews{
+    min-height: auto!important;
+    border:none!important;
+}
+
+.dropzone .dz-preview {
+    margin:0px!important;
+    margin-right: 10px!important;
+}
+
+.attachments-holder img,.attachments-holder video{
+    border-radius: 20px;
+}
+
+
+.dropzone .dz-preview.dz-image-preview {
+    background: transparent!important;
+}
+
+.dropzone .dz-preview:hover .dz-image img {
+    -webkit-filter: blur(2px)!important;
+    filter: blur(2px)!important;
+}
+
+.dropzone .dz-preview .dz-filename{
+    display: none!important;
+}
+
+.dropzone .dz-preview {
+    min-height: unset;
+}
+
+.video-preview {
+    width: 120px!important;
+    height: 120px!important;
+}
+
+.attachments-holder img{
+    width: 120px;
+    height: 120px;
+}
+
+.attachments-holder a:first-child img{
+    margin-right:0!important;
+}
+
+.ph-avatar{
+    width: 75px;
+}
+
+.messageBoxInput{
+    height:45px
+}
+
+.selectize-input, .selectize-dropdown{
+    color: inherit!important;
+}

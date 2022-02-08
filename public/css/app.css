@@ -1,0 +1,449 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100%!important;
+}
+/* Top Navbar Menu */
+.navbar{
+    padding:1rem;
+}
+
+.navbar-brand img{
+    width: 180px;
+}
+
+.button-search {
+    color: #DDD;
+    background: none;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.home-user-avatar{
+    width: 32px;
+    margin-left:0.5rem;
+}
+
+/* Login Register pages  */
+.login,
+.image {
+    min-height: 100vh
+}
+
+.bg-image {
+    background-image:  url('https://demos.creative-tim.com/soft-ui-design-system/assets/img/shapes/pattern-lines.svg');
+    background-size: cover;
+    background-position: center center
+}
+
+.brand-logo{
+    width: 200px;
+}
+
+.rounded-lg{
+    border-radius: 0.4rem!important;
+}
+
+.hidden{
+    display: none!important;
+}
+
+/* Dropzone preview boxes + other general fixes */
+.audio-preview-item {
+    padding-right: 36px;
+}
+
+.video-preview-item .video-preview {
+    border-radius: 20px;
+    overflow: hidden;
+    width: 240px;
+    height: 240px;
+    position: relative;
+    display: block;
+    z-index: 10;
+    background: linear-gradient(to bottom, #eee, #ddd);
+}
+
+.dropzone-previews.dropzone {
+    background: none!important;
+}
+
+.sticky {
+    position: sticky;
+    top: 1.5rem;
+}
+
+.sticky-sm{
+    position: sticky;
+    top:1rem;
+}
+
+.min-h-75{
+    min-height: 75%;
+}
+
+.sticky-profile-widgets {
+    position: sticky;
+    top: 1rem;
+}
+
+.sticky-widgets {
+    position: sticky!important;
+    padding-top: .5rem!important;
+}
+
+.pointer-cursor{
+    cursor:pointer;
+}
+
+.avatar-placeholder i{
+    font-size: 2.8rem;
+}
+
+.avatar-placeholder i:hover{
+}
+
+.line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.side-menu .icon-wrapper{
+    width: 2.6rem;
+}
+.side-menu .nav{
+    flex-wrap:nowrap;
+}
+
+.side-menu .nav-item i{
+    font-size: 2.0rem!important;
+}
+
+.side-menu .user-avatar, .sidebar .user-avatar{
+    width: 50px;
+    height: 50px;
+}
+
+/* Toasts */
+.toast-container {
+    position: fixed;
+    z-index: 1055;
+    margin: .5rem!important;
+}
+
+.top-right {
+    top: 0;
+    right: 0
+}
+
+.top-left {
+    top: 0;
+    left: 0
+}
+
+.top-center {
+    transform: translateX(-50%);
+    top: 0;
+    left: 50%
+}
+
+.bottom-right {
+    right: 0;
+    bottom: 0
+}
+
+.bottom-left {
+    left: 0;
+    bottom: 0
+}
+
+.bottom-center {
+    transform: translateX(-50%);
+    bottom: 0;
+    left: 50%
+}
+
+.toast-container>.toast {
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.toast .toast-indicator{
+    width:20px;
+    height:20px;
+}
+
+/* Feed component */
+.half-bg {
+    background-color: rgba(0,0,0,.45);
+}
+
+.suggestion-box{
+    background-color: #FFF!important;
+}
+
+.suggestion-box .avatar{
+    width: 96px;
+    height: 96px;
+    border: 2px solid #fefefe;
+}
+
+.post-box .avatar{
+    width:48px;
+    height: 48px;
+}
+
+.post-details .dropdown .dropdown-toggle:after,.post-details .dropdown .dropdown-toggle:before{
+    display: none;
+}
+
+.post-box .post-count-details{
+    font-size: 15px;
+}
+
+.dropdown .dropdown-toggle:after, .dropdown .dropdown-toggle:before{
+    display: none;
+}
+
+/*TODO: Review this one, might be usefull for cropped post medias*/
+.post-content {
+    /*max-height: 500px;*/
+    /*max-height: calc(100vh - 120px)*/
+}
+
+.post-content img{
+    object-fit: cover; /* Do not scale the image */
+    width: 100%;
+    max-height: 450px;
+    margin-bottom: 1rem;
+}
+
+.post-box .post-comments .form-control.is-invalid, .was-validated .form-control:invalid {
+    background-image: none!important;
+}
+
+.suggestions-header i{
+    cursor: pointer;
+}
+
+.dropdown:not(.dropdown-hover) .dropdown-menu {
+    margin-top: 0px!important;
+}
+
+.pswp_video{
+    position: relative!important;
+}
+.pswp_audio{
+    position: relative!important;
+    width:75%!important;
+    height:100px!important;
+}
+
+.pswp--zoom-allowed .pswp__img {
+    cursor: default !important
+}
+
+
+/* Menu */
+.open-menu{
+    text-decoration: none!important;
+}
+
+.dropleft .dropdown-menu {
+    top: 0!important;
+    right: 0%!important;
+    left: auto!important;
+    margin-top: 0!important;
+    margin-right: 0!important;
+}
+
+.dropright .dropdown-menu {
+    top: 0!important;
+    right: auto!important;
+    left: 0%!important;
+    margin-top: 0!important;
+    margin-left: 0!important;
+}
+
+
+/* Icons wrapper for backend SVGs includes */
+.ion-icon-wrapper{
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    contain: strict;
+    fill: currentcolor;
+    box-sizing: content-box !important;
+}
+
+.ion-icon-inner, .ion-icon-inner svg{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.icon-large{
+    font-size: 32px;
+}
+
+.icon-xlarge{
+    font-size: 50px;
+}
+
+.icon-medium{
+    font-size: 24px;
+}
+
+.icon-small{
+    font-size: 18px;
+}
+
+
+/* Global nav override */
+.page-item, .page-link{
+    margin-left:4px;
+    width:34px;
+    height:34px;
+    border-radius: 50%!important;
+    text-align: center;
+}
+
+.btn-rounded-icon{
+    width: 45px!important;
+    height: 45px!important;
+    padding:0;
+    transition: 0.3s;
+    border: none!important;
+    border-radius: 50%;
+    font-size: 20px;
+    margin:0;
+}
+
+#login-dialog .card-wrapper{
+    height: 100%;
+}
+
+/* User cards */
+.suggestion-header-bg {
+    background-color: #50505047;
+    background-position: center center!important;
+    background-size: cover!important;
+    height:140px!important;
+}
+
+.creator-body{
+    margin-top:-50px;
+}
+
+.creator-body .avatar{
+    width: 100px;
+    height: 100px;
+}
+
+.suggestion-card-btn{
+    width: 30px;
+    height: 30px;
+}
+
+/*  */
+
+.installer-bg{
+    background-color: #f8f9fa;
+}
+
+
+/* */
+
+.checkout-dialog .rounded-circle.user-avatar{
+    width:50px;
+    height:50px;
+}
+
+/*  */
+
+footer .copyRightInfo .d-flex.flex-row.nav{
+    margin-left:-1rem;
+}
+
+footer .copyRightInfo .nav-link:nth-child(1){
+    padding-left:0px!important;
+}
+
+footer .text-lg{
+    font-size: 1.1rem!important;
+}
+
+/* Profile / Posts widget */
+.recent-media .card-body img{
+    width:80px!important;
+    height:80px!important;
+}
+
+.dropdown:not(.nav-item) .dropdown-menu:before {
+    content: none!important;
+}
+
+
+.grayscale {
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(95%); /* Chrome 19+ & Safari 6+ */
+}
+
+.grayscale:hover {
+    filter: none;
+    -webkit-filter: grayscale(0%);
+}
+
+.contact-illustration{
+    width: 450px;
+}
+
+.posts-loading-indicator .spinner-border{
+    width:2rem;
+    height: 2rem;
+}
+
+.page-content-wrapper p{
+    margin:0px;
+}
+
+.page-content-wrapper h4{
+    margin-bottom:1rem!important;
+}
+
+/* Emoji Picker overrides */
+
+ .emoji-picker__emojis {
+     overflow-x: hidden!important;
+     padding-left: 0px!important;
+ }
+
+.emoji-picker__preview-emoji {
+    font-size: 1rem!important;
+}
+
+.min-vh-65{
+    min-height: 65vh;
+}
+
+.page-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.w-24{
+    width:24px;
+    height:24px;
+}

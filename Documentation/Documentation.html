@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--    <meta name="viewport" content="width=device-width,initial-scale=1">-->
+    <title>Product Documentation</title>
+    <link rel="shortcut icon" href="assets/images/rounded-logo-white.svg" type="image/x-icon">
+
+    <meta name="author" content="Qdev Techs">
+    <meta name="description" content="Bootstrap based documentation template">
+    <meta name="keywords" content="bootstrap,documentation,template">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/highlight.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/docs.css" type="text/css">
+
+    <script>
+        productConfig = {
+            name: 'JustFans - Premium content subscription platform',
+            version: '1.1.5'
+        }
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-between">
+        <!-- Sidebar -->
+        <div class="col-xl-2 col-lg-2 col-sm-12 col-md-12 col-12 show d-md-flex bg-light pt-2" id="sidebar">
+            <ul class="nav flex-column flex-nowrap overflow-hidden container" id="sticker">
+                <!-- Logo Area-->
+                <a class="navbar-brand pb-4"><img src="assets/images/rounded-logo-gradient.svg" alt="Logo" style="width: 60px"><span class="badge badge-green ml-3 versionLabel">1.3.0</span></a>
+                <!-- Navigation -->
+                <li class="nav-item">
+                    <a class="nav-link " href="#introduction"> <span class=" d-sm-inline">Introduction</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="#requirements"> <span class=" d-sm-inline">Requirements</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed  submenu" href="#submenu1" data-type="submenu" data-toggle="collapse" > <span class=" d-sm-inline">Installation</span></a>
+                    <div class="collapse" id="submenu1" aria-expanded="true">
+                        <ul class="flex-column pl-2 nav">
+                            <li class="nav-item"><a class="nav-link" href="#files-setup" ><span>Files Setup</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#db-setup" ><span>Database Setup</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#gui" ><span>GUI Install</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#cli" ><span>CLI Install</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed submenu" href="#submenu2" data-type="submenu" data-toggle="collapse" > <span class=" d-sm-inline">Finishing up</span></a>
+                    <div class="collapse" id="submenu2" aria-expanded="true">
+                        <ul class="flex-column pl-2 nav">
+                            <li><a class="nav-link " href="#payments"> <span class=" d-sm-inline">Payments</span></a></li>
+                            <li><a class="nav-link " href="#emails"> <span class=" d-sm-inline">Emails</span></a></li>
+                            <li><a class="nav-link " href="#storage"> <span class=" d-sm-inline">Storage</span></a></li>
+                            <li><a class="nav-link " href="#pusher"> <span class=" d-sm-inline">Pusher</span></a></li>
+                            <li><a class="nav-link " href="#ffmpeg"> <span class=" d-sm-inline">FFMPeg setup</span></a></li>
+                            <li><a class="nav-link " href="#crons"> <span class=" d-sm-inline">Crons setup</span></a></li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item"><a class="nav-link " href="#admin"> <span class=" d-sm-inline">Admin panel</span></a>
+                <li class="nav-item"><a class="nav-link " href="#update"> <span class=" d-sm-inline">Update</span></a>
+                <li class="nav-item"><a class="nav-link " href="#faq"> <span class=" d-sm-inline">FAQ</span></a>
+
+                <li class="nav-item"><a class="nav-link " href="#contact"> <span class=" d-sm-inline">Contact</span></a></li>
+
+            </ul>
+        </div>
+
+
+        <!-- Page Content -->
+        <div class="main-content col-xl-10 coll-md-10 col-lg-10 col-sm-12 col-12 pt-4 pb-4">
+            <h2 class="pb-4"><span class="appNameLabel">JustFans - Premium content subscription platform</span> | Docs </h2>
+
+            <div id="introduction" class="mb-4">
+
+                <h4 class="pb-2 section-header mt-1"><span class="doc-index-label">1.</span> Introduction </h4>
+                <p>Hey, thanks for purchasing <i>"<span class="appNameLabel">JustFans - Premium content subscription platform</span>"</i>. Here you'll find about everything you need in order to get started with launching your app. If you have any questions, don't hesitate do <a href="https://qdev.tech/contact/" target="_blank"> contact us</a>.</p>
+            </div>
+
+            <div id="requirements" class="mb-4">
+                <h4 class="pb-2 section-header"><span class="doc-index-label">2.</span> Requirements </h4>
+                <h5><span class="doc-index-label">2.1.</span>Webserver requirements</h5>
+                <ul>
+                    <li>Apache webserver with mod_rewrite or nginx webserver</li>
+                    <li>A Mysql 5.7.7+ or Mariadb 10.3.17+ database server</li>
+                    <li>PHP >= 7.2.5 preferably ran under php-fpm</li>
+                </ul>
+                <h5><span class="doc-index-label">2.2.</span> PHP required extensions:</h5>
+                <ul>
+                    <li>BCMath</li>
+                    <li>Ctype</li>
+                    <li>Fileinfo</li>
+                    <li>JSON</li>
+                    <li>Mbstring</li>
+                    <li>OpenSSL</li>
+                    <li>PDO</li>
+                    <li>Tokenizer</li>
+                    <li>XML</li>
+                    <li>cURL</li>
+                    <li>GD</li>
+                </ul>
+
+                <h5><span class="doc-index-label">2.3.</span> Other, optional requirements:</h5>
+                <ul>
+                    <li>FFMpeg <i>(Optional, if not provided, only mp4 videos will be allowed)</i></li>
+                    <li>AWS S3 for files storage</li>
+                    <li>AWS CloudFront for secure assets access</li>
+                    <li>Stripe & Paypal seller accounts & API Keys</li>
+                </ul>
+
+            </div>
+
+            <div id="files-setup" class="mb-4">
+                <h4 class="pb-2 section-header"><span class="doc-index-label">3.</span> Files Setup </h4>
+
+                <p>Before proceeding with the actual installation, we need to make sure that you unzip the script content onto the directory that is going to serve your domain.
+                    This can be either done via cPanel or command line.</p>
+
+                <h5><span class="doc-index-label">3.1.</span> Upload the script directory onto your server.</h5>
+                <p> Locate the file manager and upload the <code>Script</code> folder onto your web serving directory</p>
+                <img src="assets/images/docs-file-manager.jpg" class="img-fluid mb-4">
+                <h5><span class="doc-index-label">3.2.</span> Extract archive contents.</h5>
+                <img src="assets/images/doc-file-upload.jpg" class="img-fluid mb-4">
+                <h5><span class="doc-index-label">3.3.</span> Configure files permissions </h5>
+
+                <p>In order for the script to work properly, you will need to configure the right permissions some of the files & folders you've just extracted. Set the access permissions (<code>CHMOD</code>) to <code>755</code></code> for the following folders:</p>
+
+                <ul>
+                    <li><code>vendor</code></li>
+                    <li><code>storage</code></li>
+                    <li><code>bootstrap</code></li>
+                </ul>
+
+                <img src="assets/images/file-permissions.png" class="img-fluid mb-2">
+
+                <div class="alert alert-info mt-3">
+                    <p><i class="fa fa-info-circle mr-2"></i> You can find more info on how to update access permissions, depending on your setup, at:</p>
+                    <ul class="mb-0">
+                        <li><a href="https://docs.cpanel.net/cpanel/files/file-manager/#update-file-or-folder-permissions" target="_blank">cPanel - Update file or folder permissions</a></li>
+                        <li><a href="https://docs.plesk.com/en-US/12.5/customer-guide/websites-and-domains/website-content/setting-file-and-directory-access-permissions.70738" target="_blank">Plesk - Setting File and Directory Access Permissions</a> </li>
+                        <li>For CLI usage, you can use <code>chmod 755 filename</code> for single filer or <code>chmod -R 755 directory</code> for setting access to a directory recursively. </li>
+                    </ul>
+                </div>
+
+                <h5><span class="doc-index-label">3.4.</span> Changing the public directory <span class="badge badge-warning">Important</span></h5>
+
+
+                <p>Configure your web server's document / web root to point to the <code>public</code> directory of the software. For example, if you've uploaded the software in <code>example.com</code> folder, your web directory should be changed to <code>example.com/public</code> folder.</p>
+
+                <div class="alert alert-info mt-3">
+                    <p><i class="fa fa-info-circle mr-2"></i> You can find more info an how to change your site Document root over at:</p>
+                    <ul class="mb-0">
+                        <li><a href="https://docs.cpanel.net/cpanel/domains/domains/#new-document-root" target="_blank">cPanel - New document root</a></li>
+                        <li><a href="https://docs.plesk.com/en-US/obsidian/administrator-guide/77500/" target="_blank">Defining a Custom Document Root</a> </li>
+                        <li> For custom servers / VPSs you will have to change your DocumentRoot out of the site's virtual host file. </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div id="db-setup" class="mb-4">
+
+                <h4 class="pb-2 section-header">4. Database Setup </h4>
+
+                <h5><span class="doc-index-label">4.1.</span> Create a new database</h5>
+                <img src="assets/images/mysql-import-step-1.jpg" class="img-fluid mb-4" />
+                <img src="assets/images/mysql-import-step-2.jpg" class="img-fluid mb-4" />
+                <h5><span class="doc-index-label">4.2.</span> Create a new mysql user</h5>
+                <img src="assets/images/mysql-import-step-3.jpg" class="img-fluid mb-4" />
+                <h5><span class="doc-index-label">4.3.</span> Add the user to the database</h5>
+                <img src="assets/images/mysql-import-step-4.jpg" class="img-fluid mb-4" />
+                <img src="assets/images/mysql-import-step-5.jpg" class="img-fluid mb-4" />
+
+                <div class="alert alert-info mt-2">
+
+                    <p class="mb-1 mt-2"><i class="fa fa-info-circle mr-2"></i> You can find additional info on how to create databases and users, depending on your setup over at:</p>
+                    <ul class="mb-0">
+                        <li><a href="https://docs.cpanel.net/cpanel/databases/mysql-database-wizard/" target="_blank">cPanel - MySQL® Database Wizard</a></li>
+                        <li><a href="https://docs.plesk.com/en-US/obsidian/customer-guide/website-databases.69535/" target="_blank"> Plesk - Website databases </a></li>
+                        <li><a href="https://www.digitalocean.com/community/tutorials/how-to-create-and-manage-databases-in-mysql-and-mariadb-on-a-cloud-server" target="_blank">Command line - Creating and managing databases in Mysql/Mariadb</a> </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="gui" class="mb-4">
+                <h4 class="pb-2 section-header"><span class="doc-index-label">6.</span> Installation via the GUI installer</h4>
+                <p>The script comes with a ready to go web installer that you can access on the <code>/install</code> path, as in <code>https://your-domain.com/install</code>. </p>
+                <p>Once there, you should be able to see a panel like this, which will guide you through a simple, 3 steps installation process.</p>
+                <img src="assets/images/install steps.png" class="img-fluid"/>
+                <ul>
+                    <li><span class="doc-index-label">6.1.</span> Checking requirements. If minimum requirements are not met, script will not be installable.</li>
+                    <li><span class="doc-index-label">6.2.</span> In this form, please enter the database host, name, user and password that you've created on step 3.</li>
+                    <li><span class="doc-index-label">6.3.</span> In this form you'll be able to set up site's name, your admin user and <a href="https://help.market.envato.com/hc/en-us/articles/202822600-Where-Is-My-Purchase-Code-" target="_blank"> validate your script license</a>.</li>
+                </ul>
+
+                <p>Once you're done with the installation, you'll be able to customize the rest of your site's aspects via the admin panel.</p>
+
+            </div>
+
+            <div id="cli" class="mb-4">
+                <h4 class="pb-2 section-header"><span class="doc-index-label">5.</span> Installation via command line <span class="badge badge-warning">Not recommended</span></h4>
+                <p>If you even want to re-build the project from source, in case you want to do custom work, here are some useful commands.</p>
+                <p>Keep in mind that any modifications will be lost during updates.</p>
+                <ul>
+                    <li>Rename the <code>.env.example</code> file to <code>.env</code></li>
+                    <li>Create a database and add it to the <code>.env</code> file along side your mysql credentials and admin credentials</li>
+                    <li>Copy the content of the `Script` folder into the directory that servers your domain/ip (eg: <code>/var/www/html/domain.com</code>)</li>
+                    <li>SSH into your server, go to the directory you've uploaded the files and run the following commands:</li>
+                    <li><code>composer install</code></li>
+                    <li><code>php artisan npm:install</code></li>
+                    <li><code>npm run prod</code></li>
+                    <li><code>php artisan storage:link</code></li>
+                    <li><code>php artisan key:generate</code></li>
+                    <li><code>php artisan migrate</code></li>
+                    <li><code>php artisan db:seed</code></li>
+                    <li><code>php artisan activate:product code={license_code}</code></li>
+                </ul>
+            </div>
+
+            <div id="finish-up" class="mb-4">
+
+                <h4 class="pb-2 section-header"><span class="doc-index-label">7.</span> Finishing up the installation</h4>
+
+                <div id="payments">
+
+                    <h5 class="mt-2"><span class="doc-index-label">7.1.</span> Setting up the payments providers</h5>
+
+                    <p>In order to be able to receive payments, you'll need to set up at least one payment provider for your app.</p>
+                    <p>Navigating to <code>Admin > Settings > Payments</code> area, you will be able fetch your site's webhook endpoints to be used with Paypal and Stripe, and fields to fill in their Secret & Public keys.</p>
+                    <img src="assets/images/admin-settings-payments-area.png" class="img-fluid"/>
+
+                    <div class="mt-4"><strong>Stripe</strong>:</div>
+
+                    <ul>
+                        <li>Login into your <a href="https://dashboard.stripe.com/login" target="_blank">Stripe</a> dashboard.</li>
+                        <li>From the secondary sidebar, please go to <a href="https://dashboard.stripe.com/developers" target="_blank">Developers</a> > <a href="https://dashboard.stripe.com/apikeys" target="_blank">API Keys.</a></li>
+                        <li>Copy the <code>Publishable key</code> and <code>Secret key</code> in the admin panel, over at <code>Admin > Settings > Payments</code>, as in the screenshot above.</li>
+
+                        <li>Next up, from the Developers tab, go to <a href="https://dashboard.stripe.com/webhooks" target="_blank">Webhooks</a> and click on <code>Add endpoint</code> </li>
+                        <li>For the <code>Endpoint URL</code>, please copy the webhook endpoint located at <code>Admin > Settings > Payments.</code>.</li>
+                        <li>For the <code>Version</code> field, select the latest version.</li>
+                        <li>Then, for the <code>Select events to listen to</code>, go with the <code>Select all events</code>.</li>
+                    </ul>
+
+                    <strong>Paypal</strong>:
+                    <ul>
+                        <li>Login into your Paypal account, using the <a href="https://developer.paypal.com/developer/applications/" target="_blank">Paypal developer dasboard</a>.</li>
+                        <li>Go to the <a href="https://developer.paypal.com/developer/applications/">My apps & credentials</a> area, select the <code>Live</code> switch button and then hit <code>Create app</code> button to create a Paypal app.</li>
+                        <li>Copy the  Paypal's <code>ClientID</code> & Paypal <code>Secret Key</code> and add them into the admin into the <strong>Settings > Payments</strong> area.</li>
+                        <li>Go to the <a href="https://developer.paypal.com/developer/applications/">My apps & credentials</a> area,  select the <code>Live</code> switch button and then select your freshly created app.</li>
+                        <li>Scroll down the page until you reach the <code>SANDBOX WEBHOOKS</code> area, where you'll need to click on the <code>Add Webhook</code> button.</li>
+                        <li>On the Webhook URL field paste your webhook URL. This can be found, as shown in the first screenshoot, over at  <code>Admin > Settings > Payments.</code></li>
+                        <li>For the <code>Event types</code>, select <code>All Events</code> and hit <code.>Save</code.></li>
+
+                    </ul>
+
+                    <div class="mt-4"><strong>Coinbase</strong>:</div>
+                    <ul>
+                        <li>Login into your Coinbase Commerce account, using <a href="https://commerce.coinbase.com/signin" target="_blank">coinbase commerce sign in</a>.</li>
+                        <li>Go to <a href="https://commerce.coinbase.com/dashboard/settings" target="_blank">Settings section</a>.</li>
+                        <li>Search for <b>API keys</b></li>
+                        <li>Click on <b>Create an API key</b>, copy the key and add it into the admin panel into <strong>Setting > Payments area</strong>.</li>
+                        <li>Search for <b>Webhook subscriptions</b></li>
+                        <li>Click on <b>Add an endpoint</b>. The webhook url can be found over at  <code>Admin > Settings > Payments</code> section.</li>
+                        <li>Then, click on <b>Show shared secret</b> and add that secret into the admin panel, over at <code>Admin > Settings > Payments</code></li>
+                    </ul>
+
+                </div>
+
+                <div id="emails">
+                    <h4 class="mt-4"><span class="doc-index-label">7.2.</span> Setting up the emailing driver</h4>
+                    <p>For the mailing driver you can mainly choose between two main options, which is Mailgun via API or classic SMTP config. You also have the logging option, in case you're just debugging things.</p>
+
+                    <p>The emailing settings can be found over at <code>Admin > Settings > Emails</code>. Here's a short description over the settings.</p>
+
+                    <ol>
+                        <li>Mail from name - Name in which the emails are sent, also attached to email footers.</li>
+                        <li>Mail from address - Email address sending from. EG: no-reply@domain.com</li>
+                    </ol>
+
+                    <h6><span class="doc-index-label">7.2.1</span> Log driver</h6>
+                    <p>The logging driver has mainly debugging purposes. Logged emails can be found under the <code>storage/logs/laravel.log</code> log file.</p>
+
+                    <h6><span class="doc-index-label">7.2.2</span> Mailgun driver</h6>
+
+                    <ol>
+                        <li>Mailgun domain - The domain/subdomain you've set up to use with mailgun. Must have valid DNS records set up priorly.</li>
+                        <li>Mailgun secret - <a href="https://help.mailgun.com/hc/en-us/articles/203380100-Where-Can-I-Find-My-API-Key-and-SMTP-Credentials-" target="_blank" rel="nofollow">The domain API key</a> </li>
+                        <li>Mailgun endpoint - <code>api.mailgun.net</code> for US or <code>api.eu.mailgun.net</code> for EU instances</li>
+                    </ol>
+
+                    <h6><span class="doc-index-label">7.2.3</span> SMTP driver</h6>
+
+                    <ol>
+                        <li>SMTP Host - Your SMTP server host name / IP.</li>
+                        <li>SMTP Port - Generally <code>587</code> for TSL and <code>465</code> for SSL. Can be different based on the email provider.</li>
+                        <li>SMTP Encryption - TSL for non encrypted, SSL for encrypted emails</li>
+                        <li>SMTP Username - Your SMTP username</li>
+                        <li>SMTP Password - Your SMTP password</li>
+                    </ol>
+
+
+                    <p>You can mainly test the emailing features by registering a new account and see if you get the verify email. If the settings are misconfigured, you might get a 500 error, while the account should still be created. </p>
+
+                </div>
+
+                <div id="storage">
+                    <h4 class="mt-4"><span class="doc-index-label">7.3.</span> Setting up storage driver</h4>
+                    <h5 id="s3"><span class="doc-index-label">7.3.1</span> Setting up AWS S3 hosting & CloudFront</h5>
+
+                    <p>If you dont want to use your server as hosting for your application files you have the option to use AWS S3 (including CloudFront and CloudFront Signed Url's) which is more faster and secure.</p>
+                    <strong>S3</strong>:
+                    <p>To upload your data to Amazon S3, you must first create an Amazon S3 bucket in one of the AWS Regions.</p>
+                    <ol>
+                        <li>Go to <a href="https://aws.amazon.com/console/" target="_blank">AWS Console</a> and login or create an account.</li>
+                        <li>After you successfully login into your account go to <b>Search for services</b> area and search for <b>S3</b>.</li>
+                        <li>Next up, you should be redirected to <b>S3</b> page, click on <code>Buckets > Create bucket</code>.</li>
+                        <li>Set up your bucket <code>name</code> and <code>region</code>.</li>
+                        <li>Disable <code>Block all public access</code> checkbox.</li>
+                        <li>Enable <code>I acknowledge that the current settings might result in this bucket and the objects within becoming public</code> checkbox.</li>
+                        <li>The other options stay as default.</li>
+                        <li>Click on <b>Create bucket</b> after you make sure all the details are correct.</li>
+                        <li>After you successfully create the bucket, you need to generate the AWS access keys by going again to <b>Search for services</b> area and search for <b>IAM</b> (Identity and Access Management).</li>
+                        <li>Next up, go to <code>Access management > Users</code> and click on <b>Add users</b>.</li>
+                        <li>Set an <code>username</code> under user details area and enable <code>Access key - Programmatic access</code> under AWS access type area then click on Next.</li>
+                        <li>Click on <code>Attach existing policies directly</code> under <b>Set permissions</b> area then search for <code>AmazonS3FullAccess</code> and enable this policy (or you can add a custom policy) then click <b>Next</b>.</li>
+                        <li>Add a tag if you want or leave it default and finish up the create user process.</li>
+                        <li>After you successfully generate the user make sure you save the AWS <code>Access Key ID</code> and <code>Secret access key</code>.</li>
+                        <li>Save <code>bucket name</code>, <code>AWS Access Key ID</code> and <code>AWS Secret access key</code> to the admin panel, over at <code>Admin > Settings > Storage</code>.</li>
+                    </ol>
+
+                    <strong>CloudFront</strong>:
+                    <p>When you want to use CloudFront to distribute your content, you create a distribution and choose the configuration settings you want. </p>
+                    <ol>
+                        <li>Follow steps from <b>S3</b> section from above to create bucket.</li>
+                        <li>Go to <b>Search for services</b> area and search for <b>CloudFront</b>.</li>
+                        <li>Next up, you should be redirected to CloudFront page, click on <code>Distributions > Create distribution</code>.</li>
+                        <li>Set your bucket origin under <code>Origin > Origin Domain</code> area by searching for previously created bucket.</li>
+                        <li>The other options can stay as default as long as you don't want something custom.</li>
+                        <li>After you successfully create distribution, save <code>Distribution domain name</code> to the admin panel, over at <code>Admin > Settings > Storage</code> and enable <b>CloudFront</b>.</li>
+                        <li>Check <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating.html" target="_blank">Steps for Creating a Distribution</a> for more details about how to create and setup a CloudFront distribution.</li>
+                    </ol>
+
+                    <strong>S3 & CloudFront & Signed Url's</strong>:
+                    <p>To use signed URLs, you need a signer. A signer is a trusted key group that you create in CloudFront.</p>
+                    <ol>
+                        <li>
+                            Create a key pair for a trusted key group:
+                            <ul>
+                                <div class="mt-2 text-bold">
+                                    <div class="alert alert-info">
+                                        <div class="my-2"><i class="fa fa-info-circle mr-2"></i>
+                                            The following steps use OpenSSL as an example of one way to create a key pair. There are many other ways to create an RSA key pair.
+                                        </div>
+                                    </div>
+                                </div>
+                                <li>Run <code>openssl genrsa -out private_key.pem 2048</code> command to generate the private key.</li>
+                                <li>Use the following command <code>openssl rsa -pubout -in private_key.pem -out public_key.pem</code> to extract the public key from the file named <code>private_key.pem</code>.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            To upload the public key to CloudFront:
+                            <ul>
+                                <li>Sign in to the AWS Management Console and open the <a href="https://console.aws.amazon.com/cloudfront/v3/home" target="_blank">CloudFront console</a>.</li>
+                                <li>In the navigation menu, choose <code>Key management > Public keys > Create public key</code>.</li>
+                                <li>For <code>Name</code>, type a name to identify the public key.</li>
+                                <li>For <code>Key</code>, paste the public key. If you followed the steps in the preceding procedure, the public key is in the file named <code>public_key.pem</code>.</li>
+                                <div class="mt-2 text-bold">
+                                    <div class="alert alert-info">
+                                        <div class="my-2"><i class="fa fa-info-circle mr-2"></i> To copy and paste the contents of the public key, you can:</div>
+                                        <ul>
+                                            <li>Use the cat command on the macOS or Linux command line, like this: <code>cat public_key.pem</code>. Copy the output of that command, then paste it into the <b>Key value</b> field.</li>
+                                            <li>Open the <code>public_key.pem</code> file with a plaintext editor like Notepad (on Windows) or TextEdit (on macOS). Copy the contents of the file, then paste it into the <b>Key value</b> field.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <li>Click add and record the public key ID. You use it later when you create signed URLs, as the value of the <code>Key-Pair-Id</code> field.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            To add the public key to a key group:
+                            <ul>
+                                <li>In the navigation menu, choose <code>Key management > Key groups > Create key group</code>.</li>
+                                <li>For <code>Name</code>, type a name to identify the key group.</li>
+                                <li>For <code>Public keys</code>, select the public key to add to the key group, then choose <b>Add</b>.</li>
+                                <li>Choose <b>Create key group</b>.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Adding a signer to a distribution:
+                            <ul>
+                                <li>Record the key group ID of the key group that you want to use as a trusted signer.</li>
+                                <li>Open CloudFront console and choose the distribution whose files you want to protect with signed URLs or signed cookies.</li>
+                                <li>Choose the <b>Behaviors</b> tab.</li>
+                                <li>Select the cache behavior whose path pattern matches the files that you want to protect with signed URLs or signed cookies, and then choose <b>Edit</b>.</li>
+                                <li>For <b>Restrict Viewer Access (Use Signed URLs or Signed Cookies)</b>, choose <b>Yes</b>.</li>
+                                <li>For <b>Trusted Key Groups or Trusted Signer</b>, choose <b>Trusted Key Groups</b>.</li>
+                                <li>For <b>Trusted Key Groups</b>, choose the key group to add, and then choose <b>Add</b>. Repeat if you want to add more than one key group.</li>
+                                <li>Choose <b>Save changes</b> to update the cache behavior.</li>
+                            </ul>
+                        </li>
+                        <li>Save previously created public <code>Key-Pair-Id</code> to the admin panel, over at <code>Admin > Settings > Storage</code>.</li>
+                        <li>
+                            Copy previously created private key pair RSA file into project root by following steps:
+                            <ul>
+                                <li>Copy <code>private_key.pem</code> file into <code>project root</code>.</li>
+                                <li>Add private key file path to the admin panel, over at <code>Admin > Settings > Storage</code> and enable <b>CloudFront Signed Url's</b>. (If you followed previously steps this path should look like this <code>private_key.pem</code>)</li>
+                            </ul>
+                        </li>
+                        <li>At this point you can disable the public access for your <b>S3</b> bucket.</li>
+                        <li>Check <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html" target="_blank">Serving private content with signed URLs</a> for more details about CloudFront Signed Url's.</li>
+                    </ol>
+
+                    <h5 class="was"><span class="doc-index-label">7.3.1</span> Setting up Wasabi storage driver</h5>
+                    <p>If you like to use Wasabi instead of S3 for file storage, that can be set by changing the storage driver, out of the <code>Admin > Settings > Storage > Driver</code>.</p>
+                    <p>Once you've done that, you wil have to add your credentials which are available over the Wasabi website. Please make sure you account is validated, so buckets can be available to the public.</p>
+                    <p>You will also need to add the following policy to your bucket:</p>
+                    <pre class="json hljs">
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:*",
+        "sts:*"
+      ],
+      "Resource": "arn:aws:iam::${aws:accountid}:user/${aws:username}"
+    }
+  ]
+}
+</pre>
+
+                </div>
+
+
+                <div id="pusher">
+                    <h5 class="mt-4"><span class="doc-index-label">7.4.</span> Setting up Pusher</h5>
+                    <p>In order give the app realtime capabilities, used for User messenger & User notifications you will need a <a href="https://pusher.com/" target="_blank">Pusher</a> account. Once you got that, follow the steps below: </p>
+                    <ol>
+                        <li>Go to <a href="https://dashboard.pusher.com/" target="_blank">Pusher dashboard</a> and go to the <a href="https://dashboard.pusher.com/channels">Channels</a> category.</li>
+                        <li>Click on <code>Create app</code>. Select a <code>name</code> and <code>cluster region</code> at your preference.</li>
+                        <li>Next up, you should be redirected to your new app page. If not, head over <a href="https://dashboard.pusher.com/apps" target="_blank">Apps</a> and select your app.</li>
+                        <li>Copy over the <code>app_id</code>, <code>key</code>, <code>secret</code> and <code>cluster</code> and add save them to the admin panel, over at <code>Admin > Settings > Messenger & Notifications</code> area. </li>
+                    </ol>
+                </div>
+
+                <div id="ffmpeg">
+                    <h5 class="mt-4"><span class="doc-index-label">7.5.</span> Setting up FFMpeg</h5>
+                    <p>In order to allow your users to upload all types of video formats, you will need to install FFMPEG on your server, if it doesn't have it already. If FFMPEG is not available, the allowed video extensions will fallback to .mp4 only.</p>
+                </div>
+
+                <strong></strong>
+                <h6><span class="doc-index-label">7.5.1</span> FFMPEG on shared hosting</h6>
+                <p>There are numerous shared hosting providers offering FFMPEG available hosting. Please check with your provider if FFMPEG is available.</p>
+                <h6><span class="doc-index-label">7.5.2</span> Installing FFMPEG on Windows</h6>
+                <p>In order to run FFMPEG on windows, head over <a href="https://github.com/BtbN/FFmpeg-Builds/releases" target="_blank">this github page</a>, download the latest win64 build and unzip it on your drive. Make sure FFMPEG is running under the same drive as the web server.</p>
+                <h6><span class="doc-index-label">7.5.3</span> Installing FFMPEG on Ubuntu</h6>
+
+                <pre class="bash hljs">
+sudo apt update
+sudo apt install ffmpeg
+</pre>
+
+
+                <h6><span class="doc-index-label">7.5</span> Installing FFMPEG on Rhel/Centos</h6>
+
+                <p>Before proceeding with the installation, we'll need to set up some missing repositories, based on the OS version.</p>
+
+                <small><strong>Centos 6</strong></small>
+                <pre class="bash hljs">
+$ sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+$ sudo yum install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-8.noarch.rpm
+$ sudo yum install http://rpmfind.net/linux/centos/8-stream/PowerTools/x86_64/os/Packages/SDL2-2.0.10-2.el8.x86_64.rpm
+</pre>
+
+                <small><strong>Centos 7</strong></small>
+                <pre class="bash hljs">
+$ sudo rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
+$ sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+</pre>
+
+                <small><strong>Centos 8</strong></small>
+                <pre class="bash hljs">
+$ sudo dnf install https://dl.fedoraproject.org/pub/epel/
+$ sudo dnf install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm
+$ sudo yum-config-manager --enable powertools
+$ sudo dnf install ffmpeg ffmpeg-devel
+</pre>
+
+                <p>After the repos were added, continue with the installation by running the following command:</p>
+                <pre class="bash hljs">sudo yum install ffmpeg ffmpeg-devel</pre>
+
+                <h6><span class="doc-index-label">6.3.5</span> Adding the FFMPEG path to the admin</h6>
+                <p>Copy the (full path) of the <code>bin/ffmpeg</code> and <code>bin/ffprobe</code> executables and copy them over the admin panel, at <code>Admin > Settings > Media</code>.</p>
+                <p>You can also test your FFMPEG set up & get full executables paths by running the following commands</p>
+                <pre class="bash hljs">
+ffmpeg -version # To test installation
+which ffmpeg && which ffprobe # To get full exec paths
+</pre>
+
+
+                <div id="crons">
+                    <h5><span class="doc-index-label">7.6</span> Setting up the cron jobs <span class="badge badge-warning">Important</span></h5>
+
+                    <p>In order to get the platform fully functional, including the payment system, emails, offers and more, you will need to set up the following cronjob.</p>
+
+                    <pre class="bash hljs">
+* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+</pre>
+
+
+                    <div class="alert alert-info mt-3">
+                        <p><i class="fa fa-info-circle mr-2"></i> You can find more info an how to change your site Document root over at:</p>
+                        <ul class="mb-0">
+                            <li><a href="https://docs.cpanel.net/cpanel/advanced/cron-jobs/#add-a-cron-job" target="_blank">cPanel - Add a cron job</a></li>
+                            <li><a href="https://docs.plesk.com/en-US/obsidian/administrator-guide/server-administration/scheduling-tasks.64993/" target="_blank">Plesk - Scheduling Tasks</a> </li>
+                            <li> For VPS servers, you will need to add that line into your <code>/etc/crontab</code> file. Based on distribution settings, you might need to include the user as well. </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div id="admin" class="mb-4">
+                <h4 class="pb-2 section-header"><span class="doc-index-label">8.</span> Admin panel </h4>
+
+                <h5><span class="doc-index-label">8.1.</span> General info & how to add new users</h5>
+
+                <p>Once you got your main admin account set up, you can then manage your roles and other admins users from the admin panel itself.</p>
+                <p>If for some reason you lost access to the account, you can either reset the password of the user or create another and make it an admin using following command or SQL query:</p>
+                <ul>
+                    <li><code>php artisan voyager:admin your@email.com</code></li>
+                    <li><code>UPDATE users SET `role_id` = 1 WHERE `email` = 'your@email.com'</code></li>
+                </ul>
+
+                <p>If everything went fine, the Admin panel will be available at <code>http://your-domain.com/admin</code>. The credentials are set during the installation / user creation.</p>
+
+                <h5><span class="doc-index-label">8.2.</span> Available admin settings</h5>
+                <p>Here you can view and manage your website content and customize different aspects of it. Here's a quick description of the main settings available in the admin area.</p>
+
+
+                <div class="card">
+                    <div class="card-header border-0" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Show/Hide features
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+
+
+                            <ul>
+                                <li> <span class="section-header">Dashboard</span> - View quick info about your platform</li>
+                                <li> <span class="section-header">Media manager</span> - Browse and manage all site's media</li>
+                                <li> <span class="section-header">Users management</span> - Browse and manage all users and their associated data </li>
+                                <ol>
+                                    <li>Process users identity checks based on uploaded IDs</li>
+                                    <li>Manage user roles</li>
+                                    <li>Manage user wallets</li>
+                                    <li>Manage user notifications</li>
+                                    <li>Manage user messages</li>
+                                    <li>Manage user reactions</li>
+                                    <li>Manage user lists</li>
+                                    <li>Manage user lists members</li>
+                                    <li>Manage user reports</li>
+                                </ol>
+
+                                <li><span class="section-header">Posts management</span> - Browse and manage all posts and their associated data </li>
+                                <ol>
+                                    <li>Manage post attachments</li>
+                                    <li>Manage post comments</li>
+                                    <li>Manage post bookmarks</li>
+                                </ol>
+
+                                <li><span class="section-header">Money management</span> - View and manage subscriptions and payments related data </li>
+                                <ol>
+                                    <li>Manage subscriptions</li>
+                                    <li>Manage transactions</li>
+                                    <li>Manage withdrawals</li>
+                                </ol>
+
+                                <li><span class="section-header">Taxes</span> - Manage taxes, countries and regions</li>
+                                <li><span class="section-header">Pages</span> - Create and manage public pages</li>
+                                <li><span class="section-header">Settings</span> - Change a wide variety of site settings</li>
+                                <div class="pl-4">
+                                    <li>Site settings</li>
+                                    <ol>
+                                        <li>Site title</li>
+                                        <li>Site description</li>
+                                        <li>Google Analytics Tracking ID </li>
+                                        <li>Light site logo</li>
+                                        <li>Dark  site logo</li>
+                                        <li>Site favicon</li>
+                                        <li>Enable cookies box</li>
+                                        <li>Allow (users to) switch to dark mode</li>
+                                        <li>Allow (users to) change site direction (RTL-LTR)</li>
+                                        <li>Allow (users to) switch languages</li>
+                                        <li>Default site language</li>
+                                        <li>Hide identity checks menu - Either show or hide the "Verify" setting category for users</li>
+                                        <li>Enforce User Identity Check - If set to on, users will be required to complete an identity check upon posting content.</li>
+                                        <li>Custom CSS Code - Custom code to inject in the platform</li>
+                                        <li>Custom JS  Code - Custom code to inject in the platform</li>
+                                    </ol>
+                                </div>
+
+                                <div class="pl-4">
+                                    <li>Admin settings</li>
+                                    <ol>
+                                        <li>Admin Title</li>
+                                        <li>Admin Description</li>
+                                        <li>Admin Loading spinner image</li>
+                                        <li>Admin Icon Image</li>
+                                        <li>Admin Background Image</li>
+                                    </ol>
+                                </div>
+
+                                <div class="pl-4">
+                                    <li>Feed settings</li>
+                                    <ol>
+                                        <li>Posts per page</li>
+                                        <li>Suggestion box total cards</li>
+                                        <li>Suggestion box cards per page</li>
+                                        <li>Autoplay suggestions box slides</li>
+                                        <li>Disable right click on media & view page source</li>
+                                        <li>Allow post galleries Zoom in</li>
+                                    </ol>
+                                </div>
+
+                                <div class="pl-4">
+                                    <li>Media settings (See <a href="#ffmpeg"><span class="doc-index-label">7.4.</span> Setting up FFMpeg</a>)</li>
+                                    <ol>
+                                        <li>FFMpeg Path</li>
+                                        <li>FFProbe Path</li>
+                                        <li>Allowed file extensions</li>
+                                        <li>Max file uploads size (MB) <code>Do not exceed PHP limits</code></li>
+                                        <li>Max videos length (In seconds)</li>
+                                        <li>Apply watermark over uploaded assets</li>
+                                        <li>Watermark image</li>
+                                        <li>Use profile url watermark - Adds user site profile url as a wattermark</li>
+                                    </ol>
+                                </div>
+
+                                <div class="pl-4">
+                                    <li>Messenger & Notifications settings (See <a href="#pusher"><span class="doc-index-label">7.3.</span> Setting up Pusher</a>) </li>
+                                </div>
+
+                                <div class="pl-4">
+                                    <li>Invoices settings - Set payment receiver invoice details & Invoices Prefix</li>
+                                </div>
+
+                                <div class="pl-4">
+                                    <li>Payments settings (See <a href="#payments"><span class="doc-index-label">7.1.</span> Setting up the payment</a>
+                                        )</li>
+                                    <ol>
+                                        <li>View stripe & paypal & coinbase webhooks links</li>
+                                        <li>Coinbase API Key (If not provided, Coinbase payments are disabled)</li>
+                                        <li>Coinbase Webhooks Secret</li>
+                                        <li>Stripe Public Key (If not provided, Stripe payments are disabled)</li>
+                                        <li>Stripe Secret Key (If not provided, Stripe payments are disabled)</li>
+                                        <li>Stripe Webhooks Secret</li>
+                                        <li>Paypal Client Id</li>
+                                        <li>Paypal Secret (If not provided, Paypal payments are disabled)</li>
+                                        <li>Paypal Secret (If not provided, Paypal payments are disabled)</li>
+                                        <li>Paypal Live Mode ( Must be enabled to receive payments, otherwise, sandbox environment will be used.</li>
+                                        <li>Site Currency Code</li>
+                                        <li>Site Currency Symbol</li>
+                                    </ol>
+                                </div>
+
+                                <div class="pl-4">
+                                    <li>Emails settings</li>
+                                    <ol>
+                                        <li>Email driver - Choose between Log/SMTP/Mailgun. We recommend mailgun via API.</li>
+                                        <li>Mail from name</li>
+                                        <li>Mail from address</li>
+                                        <li>Additionally, each email driver comes with it's configuration fields that must be filled in properly.</li>
+                                    </ol>
+                                </div>
+
+                                <div class="pl-4">
+                                    <li>Storage settings (See <a href="#aws"><span class="doc-index-label">7.2.</span> Setting up AWS & CF</a> for advanced configs)</li>
+                                    <ol>
+                                        <li>Storage driver (Choose between locally hosted files, S3 or Wasabi ones)</li>
+                                        <li>Aws Access & Secret Key</li>
+                                        <li>Aws Region & Bucket name</li>
+                                        <li>Aws CloudFront Enabled (If enabled, assets will be served via CloudFront)</li>
+                                        <li>Aws CloudFront Domain Name</li>
+                                        <li>Aws CloudFront PreSigned Url's Enabled</li>
+                                        <li>Aws CloudFront Private Key Path</li>
+                                    </ol>
+                                </div>
+
+
+                                <div class="pl-4">
+                                    <li>Social media</li>
+                                    <ol>
+                                        <li>Set your social media footer links.</li>
+                                    </ol>
+                                </div>
+
+                                <div class="pl-4">
+                                    <li>Withdrawals and Deposit</li>
+                                    <ol>
+                                        <li>Set your deposit and withdrawal minimum and maximum constrains.</li>
+                                    </ol>
+                                </div>
+
+                                <div class="pl-4">
+                                    <li>Ad spaces</li>
+                                    <ol>
+                                        <li>Sidebar Ad - Ad to show in feed & profile right sidebars.</li>
+                                    </ol>
+                                </div>
+
+                            </ul>
+
+                         </div>
+                    </div>
+                </div>
+
+
+                <div class="mt-2 text-bold">
+                    <div class="alert alert-info">
+
+                        <div class="section-header my-2"><i class="fa fa-info-circle mr-2"></i> Settings recommendations</div>
+                        <ul>
+                            <li>For the email driver, we recommend going with the mailgun API Key based method, not the SMTP one, which can slow down the request time.</li>
+                            <li>For the assets hosting, we strongly recommend using AWS S3 & CloudFront with Presigned URLs. This is the only way you can protect your users assets, meaning the images and video links are served via CloudFront and links are temporary & IP locked.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div id="update" class="mb-4">
+                <h4 class="pb-2 section-header"><span class="doc-index-label">9.</span> How to update </h4>
+
+                <div class="alert alert-warning">Before making an update, always remember to do a complete backup of your website.</div>
+                <div class="alert alert-warning">If you've made any modifications to the software's files, your changes will be lost.</div>
+
+                <ol>
+                    <li class="pb-1">Make a backup of the <code>.env</code> config file located on your server.</li>
+                    <li class="pb-1">Upload and replace all the files on your server with what's inside the <code>Script</code> folder.</li>
+                    <li class="pb-1">Restore your <code>.env</code> config file on your server.</li>
+                    <li>Go to <code>https://example.com/update</code> and follow the update wizard.<sup>1</sup></li>
+                </ol>
+
+                <ol class="text-muted small">
+                    <li class="pb-1">Updates that do not have database changes, will not show up in the update wizard.</li>
+                </ol>
+            </div>
+
+            <div id="faq" class="mb-4">
+                <h4 class="pb-2 section-header"><span class="doc-index-label">9.</span> FAQ </h4>
+
+                <ul>
+                    <li class="pb-4">
+                        <div class="font-weight-medium">I have a support inquiry, a question or a problem, how can I contact you?</div>
+                        <div class="text-muted">You can contact us <a href="https://qdev.tech/contact/" target="_blank" rel="nofollow" class="text-primary font-weight-medium">here</a> or send us a DM on Envato.</div>
+                    </li>
+
+                    <li class="pb-4">
+                        <div class="font-weight-medium">What hosting do you recommend?</div>
+                        <div class="text-muted">We recommend using <a href="https://m.do.co/c/dec4efd6a4d7" target="_blank" rel="nofollow" class="text-primary font-weight-medium">DigitalOcean</a>, as they offer great performance and flexibility at an affordable price.</div>
+                    </li>
+
+                    <li class="pb-4">
+                        <div class="font-weight-medium">Is installation included in the price?</div>
+                        <div class="text-muted">No, installation is not included. We offer installation services for an extra fee, for which you can send us a message.</div>
+                    </li>
+
+                    <li class="pb-4">
+                        <div class="font-weight-medium">My website returns a Not Found message, why?</div>
+                        <div class="text-muted">Please ensure that you have <code>mod_rewrite</code> enabled on your server.</div>
+                    </li>
+
+                    <li class="pb-4">
+                        <div class="font-weight-medium">How can I translate my website?</div>
+                        <div class="text-muted">Make a copy of the default <code>en.json</code> language file found in <code>/resources/lang</code> folder, and change it according to your needs.</div>
+                    </li>
+
+                    <li class="pb-4">
+                        <div class="font-weight-medium">How can I reskin my website?</div>
+                        <div class="text-muted">
+                            <ol>
+                                <li>You need to Have node installed on the server</li>
+                                <li>Update the colors over at following files <code>resources/sass/_variables.scss</code> and <code>resources/sass/_variables-dark.scss</code></li>
+                                <li>Run <code>npm run prod</code> over the script directory</li>
+                            </ol>
+                            <p class="mt-2 mb-0">You new theme will be generated under the <code>public/theme</code> directory. You will have to make sure you don’t override it during updates.</p>
+                        </div>
+                    </li>
+
+                    <li class="pb-4">
+                        <p class="font-weight-medium mb-1">How can I edit my homepage?</p>
+                        <div class="text-muted">
+                            <p class="mb-1">Generally, for each page, including homepage, you will have a skeleton like this one: </p>
+
+                            <ol>
+                                <li>page.blade.php view file (for HTML)</li>
+                                <li>page.js (For Javascript changes)</li>
+                                <li>page.css (For CSS changes)</li>
+                            </ol>
+
+                            <p class="mb-1 mt-1">So for the homepage, you would have <code>home.css, home.js, home.blade.php, etc</code>. However, you will have to back up and replace your updated files after each update you do on the instance.</p>
+
+                        </div>
+                    </li>
+
+                    <li class="pb-4">
+                        <p class="font-weight-medium mb-1">How can update my custom modified version of the script?</p>
+                        <div class="text-muted">
+                            <p class="mb-1">Our recommendation regarding maintaining custom modified version of the platform is the following: </p>
+
+                            <ol>
+                                <li>Create your own (<i><b>private</b></i>) github/gitlab repository</li>
+                                <li>Host your custom code changes on a separate branch</li>
+                                <li>Update the main branch with the new update</li>
+                                <li>Merge the updated version onto your branch (resolve any conflicts if that’s the case)</li>
+                                <li>Release your (custom) updated version of the script</li>
+                                <li>Update the platform, as per <a href="#update">How to update</a> section</li>
+                            </ol>
+                        </div>
+                    </li>
+
+
+                    <li class="pb-4">
+                        <div class="font-weight-medium">My website returns a blank page, why?</div>
+                        <div class="text-muted">This generally happens when one of the server requirements is not met, please ensure your server meets the software's requirements.</div>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div id="contact" class="mb-4">
+                <h4 class="pb-2 section-header"><span class="doc-index-label">10.</span> Contact us </h4>
+                <p>For questions, do not hesitate to contact us by sending us an email at <a href="mailto:qdev.office@gmail.com">qdev.office@gmail.com</a> or visit our site at <a href="https://qdev.tech/contact/">Qdev Techs</a>. Or you can send us a message via Envato.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark">
+    <div class="container">
+        <div class="row gutter-3">
+            <div class="col-12 col-md-2">
+                <a href=""><img src="assets/images/rounded-logo-white.svg" alt="Logo" style="width: 60px"></a>
+            </div>
+            <div class="col-12 col-md-6 text-white">
+                <p class="mb-4">JustFans - Premium content subscription platform | Documentation.</p>
+                <div class="row">
+                    <div class="col">
+                        <ul class="list-group list-group-minimal">
+                            <li class="list-group-item"><a href="#" class="link">About</a></li>
+                            <li class="list-group-item"><a href="#" class="link">Documentation</a></li>
+                            <li class="list-group-item"><a href="mailto:qdev.office@gmail.com" class="link">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="list-group list-group-minimal">
+                            <li class="list-group-item"><a href="https://illustation.io/" target="_blank" class="link">Illustation.io</a></li>
+                            <li class="list-group-item"><a href="https://taskcamp.net/" target="_blank" class="link">Taskcamp</a></li>
+                            <li class="list-group-item"><a href="https://qdev.tech" target="_blank" class="link">Qdev Techs</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2 ml-auto text-md-right ">
+                <span class="badge badge-green ml-3 versionLabel">1.3.0</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+<script
+        src="https://code.jquery.com/jquery-1.9.1.min.js"
+        integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ="
+        crossorigin="anonymous"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/js/highlight.min.js" type="text/javascript"></script>
+<script src="assets/js/jquery.sticky.js" type="text/javascript"></script>
+<script src="assets/js/docs.js" type="text/javascript"></script>
+</html>

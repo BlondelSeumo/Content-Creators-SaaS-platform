@@ -1,0 +1,704 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+
+
+$soft-background-color: #ffffff !default; // Testing
+$font-color:            #48494a !default;
+$h-color:               #252f40 !default;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+) !default;
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1312px
+) !default;
+
+// Color system
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$grays: () !default;
+$grays: map-merge(
+        (
+            "100": $gray-100,
+            "200": $gray-200,
+            "300": $gray-300,
+            "400": $gray-400,
+            "500": $gray-500,
+            "600": $gray-600,
+            "700": $gray-700,
+            "800": $gray-800,
+            "900": $gray-900
+        ),
+        $grays
+);
+
+$blue:    #63B3ED !default;
+$indigo:  #596CFF !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #F56565 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #FBD38D !default;
+$green:   #81E6D9 !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
+
+$colors: () !default;
+$colors: map-merge(
+        (
+            "blue":       $blue,
+            "indigo":     $indigo,
+            "purple":     $purple,
+            "pink":       $pink,
+            "red":        $red,
+            "orange":     $orange,
+            "yellow":     $yellow,
+            "green":      $green,
+            "teal":       $teal,
+            "cyan":       $cyan,
+            "white":      $white,
+            "gray":       $gray-600,
+            "gray-dark":  $gray-800
+        ),
+        $colors
+);
+
+$primary:       #cb0c9f !default;
+$secondary:     #8392AB !default;
+$info:          #17c1e8 !default;
+$success:       #82d616 !default;
+$warning:       #f53939 !default;
+$danger:        #ea0606 !default;
+$light:         $gray-200 !default;
+$dark:          $h-color !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+        (
+            "primary":    $primary,
+            "secondary":  $secondary,
+            "success":    $success,
+            "info":       $info,
+            "warning":    $warning,
+            "danger":     $danger,
+            "light":      $light,
+            "dark":       $dark
+        ),
+        $theme-colors
+);
+
+
+// Gradient colors
+$primary-gradient:            #7928CA !default;
+$primary-gradient-state:      #FF0080 !default;
+
+$secondary-gradient:          #627594 !default;
+$secondary-gradient-state:    #A8B8D8 !default;
+
+$info-gradient:               #2152ff !default;
+$info-gradient-state:         #21d4fd !default;
+
+$success-gradient:            #17ad37 !default;
+$success-gradient-state:      #98ec2d !default;
+
+$danger-gradient:             #ea0606 !default;
+$danger-gradient-state:       #ff667c !default;
+
+$warning-gradient:            #f53939 !default;
+$warning-gradient-state:      #fbcf33 !default;
+
+$dark-gradient:               #141727 !default;
+$dark-gradient-state:         #3A416F !default;
+
+$light-gradient:              #CED4DA !default;
+$light-gradient-state:        #EBEFF4 !default;
+
+// Gradient Colors map
+$theme-gradient-colors: (
+    "primary":    ($primary-gradient, $primary-gradient-state),
+    "secondary":  ($secondary-gradient, $secondary-gradient-state),
+    "success":    ($success-gradient, $success-gradient-state),
+    "info":       ($info-gradient, $info-gradient-state),
+    "warning":    ($warning-gradient, $warning-gradient-state),
+    "danger":     ($danger-gradient, $danger-gradient-state),
+    "light":      ($light-gradient, $light-gradient-state),
+    "dark":       ($dark-gradient, $dark-gradient-state)
+) !default;
+
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:                   $white !default;
+$body-color:                $font-color !default;
+$body-text-align:           null !default;
+
+// Set a specific jump point for requesting color jumps
+$theme-color-interval:        8% !default;
+
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio:          4.5 !default;
+
+// Customize the light and dark text colors for use in our color contrast function.
+$color-contrast-dark:         $black !default;
+$color-contrast-light:        $white !default;
+
+// fusv-disable
+$blue-100: tint-color($blue, 8) !default;
+$blue-200: tint-color($blue, 6) !default;
+$blue-300: tint-color($blue, 4) !default;
+$blue-400: tint-color($blue, 2) !default;
+$blue-500: $blue !default;
+$blue-600: shade-color($blue, 2) !default;
+$blue-700: shade-color($blue, 4) !default;
+$blue-800: shade-color($blue, 6) !default;
+$blue-900: shade-color($blue, 8) !default;
+
+$indigo-100: tint-color($indigo, 8) !default;
+$indigo-200: tint-color($indigo, 6) !default;
+$indigo-300: tint-color($indigo, 4) !default;
+$indigo-400: tint-color($indigo, 2) !default;
+$indigo-500: $indigo !default;
+$indigo-600: shade-color($indigo, 2) !default;
+$indigo-700: shade-color($indigo, 4) !default;
+$indigo-800: shade-color($indigo, 6) !default;
+$indigo-900: shade-color($indigo, 8) !default;
+
+$purple-100: tint-color($purple, 8) !default;
+$purple-200: tint-color($purple, 6) !default;
+$purple-300: tint-color($purple, 4) !default;
+$purple-400: tint-color($purple, 2) !default;
+$purple-500: $purple !default;
+$purple-600: shade-color($purple, 2) !default;
+$purple-700: shade-color($purple, 4) !default;
+$purple-800: shade-color($purple, 6) !default;
+$purple-900: shade-color($purple, 8) !default;
+
+$pink-100: tint-color($pink, 8) !default;
+$pink-200: tint-color($pink, 6) !default;
+$pink-300: tint-color($pink, 4) !default;
+$pink-400: tint-color($pink, 2) !default;
+$pink-500: $pink !default;
+$pink-600: shade-color($pink, 2) !default;
+$pink-700: shade-color($pink, 4) !default;
+$pink-800: shade-color($pink, 6) !default;
+$pink-900: shade-color($pink, 8) !default;
+
+$red-100: tint-color($red, 8) !default;
+$red-200: tint-color($red, 6) !default;
+$red-300: tint-color($red, 4) !default;
+$red-400: tint-color($red, 2) !default;
+$red-500: $red !default;
+$red-600: shade-color($red, 2) !default;
+$red-700: shade-color($red, 4) !default;
+$red-800: shade-color($red, 6) !default;
+$red-900: shade-color($red, 8) !default;
+
+$orange-100: tint-color($orange, 8) !default;
+$orange-200: tint-color($orange, 6) !default;
+$orange-300: tint-color($orange, 4) !default;
+$orange-400: tint-color($orange, 2) !default;
+$orange-500: $orange !default;
+$orange-600: shade-color($orange, 2) !default;
+$orange-700: shade-color($orange, 4) !default;
+$orange-800: shade-color($orange, 6) !default;
+$orange-900: shade-color($orange, 8) !default;
+
+$yellow-100: tint-color($yellow, 8) !default;
+$yellow-200: tint-color($yellow, 6) !default;
+$yellow-300: tint-color($yellow, 4) !default;
+$yellow-400: tint-color($yellow, 2) !default;
+$yellow-500: $yellow !default;
+$yellow-600: shade-color($yellow, 2) !default;
+$yellow-700: shade-color($yellow, 4) !default;
+$yellow-800: shade-color($yellow, 6) !default;
+$yellow-900: shade-color($yellow, 8) !default;
+
+$green-100: tint-color($green, 8) !default;
+$green-200: tint-color($green, 6) !default;
+$green-300: tint-color($green, 4) !default;
+$green-400: tint-color($green, 2) !default;
+$green-500: $green !default;
+$green-600: shade-color($green, 2) !default;
+$green-700: shade-color($green, 4) !default;
+$green-800: shade-color($green, 6) !default;
+$green-900: shade-color($green, 8) !default;
+
+$teal-100: tint-color($teal, 8) !default;
+$teal-200: tint-color($teal, 6) !default;
+$teal-300: tint-color($teal, 4) !default;
+$teal-400: tint-color($teal, 2) !default;
+$teal-500: $teal !default;
+$teal-600: shade-color($teal, 2) !default;
+$teal-700: shade-color($teal, 4) !default;
+$teal-800: shade-color($teal, 6) !default;
+$teal-900: shade-color($teal, 8) !default;
+
+$cyan-100: tint-color($cyan, 8) !default;
+$cyan-200: tint-color($cyan, 6) !default;
+$cyan-300: tint-color($cyan, 4) !default;
+$cyan-400: tint-color($cyan, 2) !default;
+$cyan-500: $cyan !default;
+$cyan-600: shade-color($cyan, 2) !default;
+$cyan-700: shade-color($cyan, 4) !default;
+$cyan-800: shade-color($cyan, 6) !default;
+$cyan-900: shade-color($cyan, 8) !default;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$border-width:                1px !default;
+$border-color:                $gray-300 !default;
+
+$border-radius-xs:            .125rem !default;
+$border-radius-sm:            .25rem !default;
+$border-radius-md:            .5rem !default;
+$border-radius-lg:            .75rem !default;
+$border-radius-xl:            1rem !default;
+$border-radius-2xl:           1.5rem !default;
+$border-radius-section:       10rem !default;
+
+$border-widths: (
+    0: 0,
+    1: 1px,
+    2: 2px,
+    3: 3px,
+    4: 4px,
+    5: 5px
+) !default;
+$rounded-pill:                50rem !default;
+
+$box-shadow-xs:               0 2px 9px -5px rgba($black, 0.15) !default;
+$box-shadow-sm:               0 .3125rem .625rem 0 rgba(0, 0, 0, 0.12) !default;
+$box-shadow:                  0 .25rem .375rem -.0625rem rgba(20, 20, 20, .12), 0 .125rem .25rem -.0625rem rgba(20, 20, 20, .07) !default;
+$box-shadow-lg:               0 8px 26px -4px rgba(20, 20, 20, 0.15), 0 8px 9px -5px rgba(20, 20, 20, 0.06) !default;
+$box-shadow-xl:                0 23px 45px -11px rgba(20, 20, 20, .25) !default;
+$box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
+
+$component-active-color:      $white !default;
+$component-active-bg:         $primary !default;
+
+$caret-width:                 .3em !default;
+$caret-vertical-align:        $caret-width * .85 !default;
+$caret-spacing:               $caret-width * .85 !default;
+
+$transition-base:             all .2s ease-in-out !default;
+$transition-fade:             opacity .15s linear !default;
+$transition-collapse:         height .35s ease !default;
+// Links
+//
+// Style anchor elements.
+
+$link-color:                              $primary !default;
+$link-decoration:                         none !default;
+$link-hover-color:                        darken($link-color, 15%) !default;
+$link-hover-decoration:                   none !default;
+// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+$emphasized-link-hover-darken-percentage: 15% !default;
+
+$stretched-link-pseudo-element:           after !default;
+$stretched-link-z-index:                  1 !default;
+
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1rem !default;
+$spacers: (
+    0: 0,
+    1: $spacer / 4,
+    2: $spacer / 2,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+) !default;
+
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      'Open Sans' !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// stylelint-enable value-keyword-case
+$font-family-base:            var(--bs-font-sans-serif) !default;
+$font-family-code:            var(--bs-font-monospace) !default;
+
+// $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
+// $font-size-base effects the font size of the body text
+$font-size-root:              null !default;
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-xxs:               $font-size-base * .65 !default;
+$font-size-xs:                $font-size-base * .75 !default;
+$font-size-sm:                $font-size-base * .875 !default;
+$font-size-lg:                $font-size-base * 1.125 !default;
+$font-size-xl:                $font-size-base * 1.25 !default;
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            600 !default;
+$font-weight-bolder:          700 !default;
+
+$font-weight-base:            $font-weight-normal !default;
+
+$h1-font-weight:              $font-weight-bold !default;
+$h2-font-weight:              $font-weight-bold !default;
+$h3-font-weight:              $font-weight-bold !default;
+$h4-font-weight:              $font-weight-bold !default;
+$h5-font-weight:              $font-weight-bold !default;
+$h6-font-weight:              $font-weight-bold !default;
+$p-font-weight:               $font-weight-normal !default;
+$lead-font-weight:            $font-weight-normal !default;
+$text-sm-font-weight:         $font-weight-normal !default;
+$text-xs-font-weight:         $font-weight-normal !default;
+
+$line-height:                 1.75rem !default;
+$line-height-base:            1.5 !default;
+$line-height-sm:              1.25 !default;
+$line-height-lg:              2 !default;
+
+$h1-line-height:              1.25 !default;
+$h2-line-height:              1.3 !default;
+$h3-line-height:              1.375 !default;
+$h4-line-height:              1.375 !default;
+$h5-line-height:              1.375 !default;
+$h6-line-height:              1.625 !default;
+$p-line-height:               1.6 !default;
+$lead-line-height:            1.625 !default;
+$text-sm-line-height:         1.5 !default;
+$text-xs-line-height:         1.25 !default;
+
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$h1-font-size:                $font-size-base * 3 !default;
+$h2-font-size:                $font-size-base * 2.25 !default;
+$h3-font-size:                $font-size-base * 1.875 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
+$lead-font-size:              $font-size-base * 1.25 !default;
+
+
+$text-sm-font-size:           .875rem !default;
+$text-xs-font-size:           .75rem !default;
+$p-font-size:                 1rem !default;
+
+$headings-margin-bottom:      $spacer / 2 !default;
+$headings-font-family:        null !default;
+$headings-font-style:         null !default;
+$headings-font-weight:        400 !default;
+$headings-line-height:        1.2 !default;
+$headings-color:              null !default;
+
+$display-font-sizes: (
+    1: 5rem,
+    2: 4.5rem,
+    3: 4rem,
+    4: 3.5rem,
+    5: 3rem,
+    6: 2.5rem
+) !default;
+
+$display-font-weight: 300 !default;
+$display-line-height: $headings-line-height !default;
+// scss-docs-end display-headings
+
+$lead-font-size:              $font-size-base * 1.25 !default;
+$lead-font-weight:            300 !default;
+
+$small-font-size:             .875em !default;
+
+$sub-sup-font-size:           .75em !default;
+
+$text-secondary:              $font-color !default;
+$text-muted:                  $gray-600 !default;
+
+// text gradient
+$text-gradient-bg-clip:       text !default;
+$text-gradient-text-fill:     transparent !default;
+$text-gradient-position:      relative !default;
+$text-gradient-zindex:        1 !default;
+$text-gradient-bg-primary:    linear-gradient(310deg, #7928CA, #FF0080) !default;
+$text-gradient-bg-info:       linear-gradient(310deg, #2152FF, #21D4FD) !default;
+$text-gradient-bg-success:    linear-gradient(310deg, #17AD37, #C1E823) !default;
+$text-gradient-bg-warning:    linear-gradient(310deg, #F53939, #FBCF33) !default;
+$text-gradient-bg-danger:     linear-gradient(310deg, #D60808, #FF6690) !default;
+$text-gradient-bg-dark:     linear-gradient(310deg, #141727, #3A416F) !default;
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-padding-y:         .5rem !default;
+$input-btn-padding-x:         .75rem !default;
+$input-btn-font-family:       null !default;
+$input-btn-font-size:         1rem !default;
+$input-btn-line-height:       1.4 !default;
+
+$input-btn-focus-width:         .2rem !default;
+//$input-btn-focus-color-opacity: .25 !default;
+//$input-btn-focus-color:         rgba($component-active-bg, $input-btn-focus-color-opacity) !default;
+//$input-btn-focus-box-shadow:    0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
+
+$input-btn-padding-y-sm:      .25rem !default;
+$input-btn-padding-x-sm:      .75rem !default;
+$input-btn-font-size-sm:      .75rem !default;
+
+$input-btn-padding-y-lg:      .75rem !default;
+$input-btn-padding-x-lg:      .75rem !default;
+$input-btn-font-size-lg:      .875rem !default;
+
+$input-btn-border-width:      $border-width !default;
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-padding-y:               .75rem !default;
+$btn-padding-x:               1.5rem !default;
+$btn-font-family:             $input-btn-font-family !default;
+$btn-font-size:               $text-xs-font-size !default;
+$btn-line-height:             $input-btn-line-height !default;
+$btn-white-space:             null !default; // Set to `nowrap` to prevent text wrapping
+$btn-letter-spacing:          -0.025rem !default; // Set to `nowrap` to prevent text wrapping
+
+$btn-margin-bottom:           1rem !default;
+$btn-padding-y-sm:            .5rem !default;
+$btn-padding-x-sm:            2rem !default;
+$btn-font-size-sm:            $input-btn-font-size-sm !default;
+
+$btn-padding-y-lg:            .875rem !default;
+$btn-padding-x-lg:            4rem !default;
+$btn-font-size-lg:            .875rem !default;
+
+$btn-border-width:            $input-btn-border-width !default;
+
+$btn-font-weight:             $font-weight-bolder !default;
+$btn-box-shadow:              0 4px 7px -1px rgba(0,0,0,.11), 0 2px 4px -1px rgba(0,0,0,.07) !default;
+$btn-box-shadow-values:       0 5px 8px 0 !default;
+$btn-box-shadow-hover-values: 0 8px 10px 0 !default;
+$btn-hover-box-shadow:        0 3px 5px -1px rgba(0,0,0,.09), 0 2px 3px -1px rgba(0,0,0,.07) !default;
+$btn-focus-box-shadow:        $btn-hover-box-shadow !default;
+$btn-focus-width:             $input-btn-focus-width !default;
+$btn-hover-opacity:           .85 !default;
+$btn-disabled-opacity:        .65 !default;
+$btn-active-box-shadow:       none !default;
+$btn-background-size:         150% !default;
+$btn-hover-transform:         scale(1.02) !default;
+$btn-active-hover-transform:  scale(1) !default;
+$btn-background-position-x:   25% !default;
+
+$btn-link-color:              $link-color !default;
+$btn-link-hover-color:        $link-hover-color !default;
+$btn-link-disabled-color:     $gray-600 !default;
+
+$btn-block-spacing-y:         .5rem !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           .5rem !default;
+$btn-border-radius-lg:        .5rem !default;
+$btn-border-radius-sm:        .5rem !default;
+$btn-border-rounded:          1.875rem !default;
+
+$btn-icon-transition:         all .2s cubic-bezier(.34,1.61,.7,1.3) !default;
+$btn-icon-transform-right:          translateX(5px) !default;
+$btn-icon-transform-left:          translateX(-5px) !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           $border-radius-md !default;
+$btn-border-radius-sm:        $border-radius-sm !default;
+$btn-border-radius-lg:        $border-radius-lg !default;
+
+$btn-transition:              all .15s ease-in !default;
+
+$btn-just-icon-padding-x-sm:     .3rem !default;
+$btn-just-icon-padding-y-sm:     .3rem !default;
+$btn-just-icon-padding-x:         .7rem !default;
+$btn-just-icon-padding-y:         .7rem !default;
+$btn-just-icon-padding-x-lg:         1rem !default;
+$btn-just-icon-padding-y-lg:         1rem !default;
+$btn-just-icon-width:         2.375rem !default;
+$btn-just-icon-height:        $btn-just-icon-width !default;
+$btn-just-icon-width-sm:      1.5875rem !default;
+$btn-just-icon-height-sm:     $btn-just-icon-width-sm !default;
+$btn-just-icon-sm-font-size:  .5rem !default;
+$btn-just-icon-width-lg:      3.25rem !default;
+$btn-just-icon-height-lg:     $btn-just-icon-width-lg !default;
+$btn-just-icon-lg-font-size:  1.2rem !default;
+$btn-just-icon-lg-position:   relative !default;
+$btn-just-icon-lg-top:        2px !default;
+
+// we've overwritten the default Bootstrap function
+// for dynamically adding font color since the colors
+// added by that function were not correctly set
+$btn-primary-font-color:      #fff !default;
+$btn-secondary-font-color:    #fff !default;
+$btn-danger-font-color:       #fff !default;
+$btn-info-font-color:         #fff !default;
+$btn-success-font-color:      #fff !default;
+$btn-warning-font-color:      #fff !default;
+$btn-dark-font-color:         #fff !default;
+$btn-light-font-color:        #3A416F !default;
+
+$btn-font-colors: () !default;
+
+$btn-font-colors: map-merge(
+        (
+            "primary":       $btn-primary-font-color,
+            "secondary":     $btn-secondary-font-color,
+            "danger":        $btn-danger-font-color,
+            "info":          $btn-info-font-color,
+            "success":       $btn-success-font-color,
+            "warning":       $btn-warning-font-color,
+            "dark":          $btn-dark-font-color,
+            "light":         $btn-light-font-color
+        ),
+        $btn-font-colors
+);
+
+// Letter Spacing
+$letter-wider:                .05rem !default;
+$letter-normal:               0rem !default;
+$letter-tighter:              -0.05rem !default;
+$h1-letter-spacing:           0.1rem !default;
+$a-letter-spacing:            -0.025rem !default;
+
+// Dropdowns
+//
+// Dropdown menu container and contents.
+
+$dropdown-subitem-position:                101% !default;
+$dropdown-transition:                      visibility .25s,opacity .25s,transform .25s !default;
+$dropdown-transform-origin:                50% 0 !default;
+$dropdown-transform:                       perspective(999px) rotateX(-10deg) translateZ(0) translate3d(0px, 37px, 0px) !important !default;
+$dropdown-transform-show:                  perspective(999px) rotateX(0deg) translateZ(0) translate3d(0, 37px,5px) !important !default;
+
+$dropdown-multilevel-transform:            perspective(999px) rotateX(-10deg) translateZ(0) translate3d(0px, 0px, 0px) !important !default;
+$dropdown-multilevel-transform-show:       perspective(999px) rotateX(0deg) translateZ(0) translate3d(0, 0px,5px) !important !default;
+
+$dropup-transform-origin:                  bottom !default;
+$dropup-transform:                         perspective(999px) rotateX(12deg) translateZ(0) translate3d(0px, 0px, 0px) !important !default;
+$dropup-transform-show:                    perspective(999px) rotateX(0deg) translateZ(0) translate3d(1px,0px,5px) !important !default;
+
+$dropdown-icon-margin-right:               .75rem !default;
+
+$dropdown-toggle-arrow-transform:          rotate(180deg) !default;
+$dropdown-toggle-arrow-transition:         .3s ease !default;
+
+$dropdown-button-after-margin-top:         3px !default;
+
+$dropdown-animation-arrow-left-position:   28px !default;
+$dropup-animation-arrow-bottom-position:   22px !default;
+$dropdown-animation-arrow-font-size:       22px !default;
+$dropup-animation-arrow-transition:        bottom .35s ease !default;
+$dropdown-animation-arrow-transition:      top .35s ease !default;
+$dropup-mb:                                .5rem !default;
+
+$dropdown-mt:                              8px !default;
+$dropdown-hover-after-bottom-pos:          -24px !default;
+$dropdown-hover-after-bottom-pos:          -24px !default;
+$dropdown-hover-arrow-active-top:          -20px !default;
+
+$dropdown-subitem-position-right:          -197px !default;
+$dropdown-subitem-left-hover:              -8px !default;
+$dropdown-subitem-arrow-rotate:            rotate(-90deg) !default;
+
+$dropdown-md-min-width:                    15rem !default;
+$dropdown-lg-min-width:                    23rem !default;
+$dropdown-lg-width-responsive:             19rem !default;
+$dropdown-xl-min-width:                    40rem !default;
+
+$dropdown-min-width:                11rem !default;
+$dropdown-padding-x:                0 !default;
+$dropdown-padding-y:                .5rem !default;
+$dropdown-spacer:                   1.625rem !default;
+$dropdown-font-size:                $font-size-sm !default;
+$dropdown-color:                    $body-color !default;
+$dropdown-bg:                       $white !default;
+$dropdown-border-color:             transparent !default;
+$dropdown-border-radius:            $border-radius-md !default;
+$dropdown-border-width:             0 !default;
+$dropdown-inner-border-radius:      subtract($dropdown-border-radius, $dropdown-border-width) !default;
+$dropdown-transition-time:          .3s ease !default;
+$dropdown-divider-bg:               $dropdown-border-color !default;
+$dropdown-divider-margin-y:         $spacer / 2 !default;
+$dropdown-box-shadow:               $box-shadow-lg !default;
+
+$dropdown-link-color:               $font-color !default;
+$dropdown-link-hover-color:         $h-color !default;
+$dropdown-link-hover-bg:            $gray-200 !default;
+
+$dropdown-link-active-color:        $font-color !default;
+$dropdown-link-active-bg:           transparent !default;
+
+$dropdown-link-disabled-color:      $gray-600 !default;
+
+$dropdown-item-padding-y:           .3rem !default;
+$dropdown-item-padding-x:           $spacer !default;
+
+$dropdown-header-color:             $gray-600 !default;
+$dropdown-header-padding:           $dropdown-padding-y $dropdown-item-padding-x !default;
+
+$dropdown-dark-color:               $gray-300 !default;
+$dropdown-dark-bg:                  $gray-800 !default;
+$dropdown-dark-border-color:        $dropdown-border-color !default;
+$dropdown-dark-divider-bg:          $dropdown-divider-bg !default;
+$dropdown-dark-box-shadow:          null !default;
+$dropdown-dark-link-color:          $dropdown-dark-color !default;
+$dropdown-dark-link-hover-color:    $white !default;
+$dropdown-dark-link-hover-bg:       rgba($white, .15) !default;
+$dropdown-dark-link-active-color:   $dropdown-link-active-color !default;
+$dropdown-dark-link-active-bg:      $dropdown-link-active-bg !default;
+$dropdown-dark-link-disabled-color: $gray-500 !default;
+$dropdown-dark-header-color:        $gray-500 !default;
+
+// extra margins utilities variables - CT
+$opacity-0:                     0 !default;
+$opacity-1:                     .1 !default;
+$opacity-2:                     .2 !default;
+$opacity-3:                     .3 !default;
+$opacity-4:                     .4 !default;
+$opacity-5:                     .5 !default;
+$opacity-6:                     .6 !default;
+$opacity-7:                     .7 !default;
+$opacity-8:                     .8 !default;
+$opacity-9:                     .9 !default;
+$opacity-10:                    1 !default;

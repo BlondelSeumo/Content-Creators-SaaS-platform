@@ -1,0 +1,55 @@
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.invoice-content {
+    margin-top: 5%;
+}
+
+.invoice-border-light {
+    border: 1px solid #dee2e6;
+    background-color: #fff;
+}
+
+.invoice-border-dark {
+    border: 1px solid #495057;
+}
+
+.invoice-logo {
+    margin-top: 10%;
+}
+
+.invoice-body-light {
+    background-color: #f8f9fa;
+}
+
+@media print {
+    footer {
+        display: none;
+    }
+
+    .invoice-footer {
+        display: none;
+    }
+
+    .invoice-content {
+        border: none;
+    }
+
+    .invoice-logo {
+        display: none;
+    }
+}
+
+@page {
+    size: auto;
+}
+
+.table-responsive{
+    overflow: hidden;
+    outline: none;
+}

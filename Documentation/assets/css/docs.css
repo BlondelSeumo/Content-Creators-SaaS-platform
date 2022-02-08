@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,700|Open+Sans:300,400,600,700|Roboto+Mono");
+
+body{
+	font-family: "Open Sans", sans-serif;
+	background-color: #F8F8F8;
+}
+
+@media (min-width: 1200px){
+    .container {
+        max-width: 1240px!important;
+    }
+}
+.nav{
+    padding: 0px;
+}
+
+ul, ol {
+    line-height: 1.6rem;
+}
+
+code{
+    padding: 4px;
+}
+
+.nav-link[data-toggle].collapsed:after {
+    font-family: FontAwesome;
+    content: "\f106";
+    width: 1em;
+    line-height: 1em;
+    right: 30px;
+    top: 50%;
+    font-size: 1.2rem;
+    margin-top: -0.5em;
+    color: #999999;
+    margin-left:30px;
+}
+.nav-link[data-toggle]:not(.collapsed):after {
+    font-family: FontAwesome;
+    content: "\f107";
+    width: 1em;
+    line-height: 1em;
+    right: 30px;
+    top: 50%;
+    font-size: 1.2rem;
+    margin-top: -0.5em;
+    color: #999999;
+    margin-left:30px;
+}
+
+.nav-link{
+    padding-left: .0rem;
+    padding-left: .0rem;
+}
+
+.submenu .nav-link{
+    padding-left: .5rem;
+    padding-left: .5rem;
+}
+
+.nav-link {
+    color: #000;
+    display: block;
+    border-right: 2px solid transparent;
+}
+
+/* General stylings */
+
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: yellow;
+    padding: 50px;
+    font-size: 20px;
+}
+
+code{
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 0.25rem;
+    border: 1px solid #e5e5e5;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 0.5rem;
+    font-family: "Muli", sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #000;
+}
+
+.badge-green {
+    color: #fff;
+    background-color: #28a745;
+}
+
+.badge {
+    text-transform: uppercase;
+    font-size: .75rem;
+    font-weight: 600;
+    padding: .5rem 1rem;
+    letter-spacing: 0.05em;
+}
+
+/* Footer */
+
+.bg-dark {
+    background-color: #151515 !important;
+}
+
+.text-white p {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+body > footer {
+    position: relative;
+    margin: 0 auto;
+    padding: 6.25rem 0;
+    overflow: hidden;
+}
+
+.list-group-minimal .list-group-item {
+    margin-bottom: 15px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.list-group-minimal .list-group-item a {
+    color: inherit;
+}
+
+.btn-inverted {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.section-header{
+    font-weight: 600;
+}
+
+.doc-index-label{
+    color:#00000099;
+}
